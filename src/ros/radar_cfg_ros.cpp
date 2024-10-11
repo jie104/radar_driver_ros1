@@ -21,8 +21,8 @@ RadarCfgROS::RadarCfgROS(ros::NodeHandle &nh, ARS_40X_CAN *ars_40X_can) :
       nh.advertiseService("set_send_ext_info", &RadarCfgROS::set_send_ext_info, this);
   set_sort_index_service_ =
       nh.advertiseService("set_sort_index", &RadarCfgROS::set_sort_index, this);
-  set_ctrl_relay_cfg_service_ =
-      nh.advertiseService("set_ctrl_relay_cfg", &RadarCfgROS::set_ctrl_relay_cfg, this);
+//  set_ctrl_relay_cfg_service_ =
+//      nh.advertiseService("set_ctrl_relay_cfg", &RadarCfgROS::set_ctrl_relay_cfg, this);
   set_store_in_nvm_service_ =
       nh.advertiseService("set_store_in_nvm", &RadarCfgROS::set_store_in_nvm, this);
   set_rcs_threshold_service_ =
@@ -98,13 +98,13 @@ bool RadarCfgROS::set_sort_index(
   return true;
 }
 
-bool RadarCfgROS::set_ctrl_relay_cfg(
-    std_srvs::SetBool::Request &req,
-    std_srvs::SetBool::Response & /*res*/) {
-  radar_cfg_->set_ctrl_relay_cfg(static_cast<bool>(req.data));
-  ars_40X_can_->send_radar_data(can_messages::RadarCfg);
-  return true;
-}
+//bool RadarCfgROS::set_ctrl_relay_cfg(
+//    std_srvs::SetBool::Request &req,
+//    std_srvs::SetBool::Response & /*res*/) {
+//  radar_cfg_->set_ctrl_relay_cfg(static_cast<bool>(req.data));
+//  ars_40X_can_->send_radar_data(can_messages::RadarCfg);
+//  return true;
+//}
 
 bool RadarCfgROS::set_store_in_nvm(
     std_srvs::SetBool::Request &req,

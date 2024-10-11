@@ -14,9 +14,11 @@ RadarCfg::RadarCfg() {
   radar_cfg_msg.data.RadarCfg_SendQuality_valid = 0;
   radar_cfg_msg.data.RadarCfg_SendExtInfo_valid = 0;
   radar_cfg_msg.data.RadarCfg_SortIndex_valid = 0;
-  radar_cfg_msg.data.RadarCfg_CtrlRelay_valid = 0;
+//  radar_cfg_msg.data.RadarCfg_CtrlRelay_valid = 0;
   radar_cfg_msg.data.RadarCfg_StoreInNVM_valid = 0;
   radar_cfg_msg.data.RadarCfg_RCS_Threshold_valid = 0;
+  radar_cfg_msg.data.RadarCfg_Interface_Select_Valid=0;
+  radar_cfg_msg.data.RadarCfg_BaudRate_valid=0;
 }
 
 RadarCfg::~RadarCfg() {
@@ -79,10 +81,10 @@ bool RadarCfg::set_sort_index(int sort_index, bool valid) {
   return true;
 }
 
-void RadarCfg::set_ctrl_relay_cfg(bool ctrl_relay, bool valid) {
-  radar_cfg_msg.data.RadarCfg_CtrlRelay = static_cast<uint64_t>(ctrl_relay);
-  radar_cfg_msg.data.RadarCfg_CtrlRelay_valid = static_cast<uint64_t>(valid);
-}
+//void RadarCfg::set_ctrl_relay_cfg(bool ctrl_relay, bool valid) {
+//  radar_cfg_msg.data.RadarCfg_CtrlRelay = static_cast<uint64_t>(ctrl_relay);
+//  radar_cfg_msg.data.RadarCfg_CtrlRelay_valid = static_cast<uint64_t>(valid);
+//}
 
 void RadarCfg::set_store_in_nvm(bool store_in_nvm, bool valid) {
   radar_cfg_msg.data.RadarCfg_StoreInNVM = static_cast<uint64_t>(store_in_nvm);
