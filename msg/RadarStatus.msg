@@ -14,4 +14,6 @@ int8 output_type_cfg
 bool send_quality_cfg
 bool send_ext_info_cfg
 int8 motion_rx_state
+int8 can_baud_rate
+int8 interface_type
 bool rcs_threshold
