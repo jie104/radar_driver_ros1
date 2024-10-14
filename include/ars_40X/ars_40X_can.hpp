@@ -21,25 +21,25 @@ namespace ars_40X {
 typedef enum can_messages {
   RadarCfg = 0x200,
   RadarState = 0x201,
-  FilterCfg = 0x202,
-  FilterState_Header = 0x203,
-  FilterState_Cfg = 0x204,
-  CollDetCfg = 0x400,
+//  FilterCfg = 0x202,
+//  FilterState_Header = 0x203,
+//  FilterState_Cfg = 0x204,
+//  CollDetCfg = 0x400,
   CollDetRegionCfg = 0x401,
-  CollDetState = 0x408,
+//  CollDetState = 0x408,
   CollDetRegionState = 0x402,
-  SpeedInformation = 0x300,
-  YawRateInformation = 0x301,
-  Cluster_0_Status = 0x600,
-  Cluster_1_General = 0x701,
-  Cluster_2_Quality = 0x702,
+//  SpeedInformation = 0x300,
+//  YawRateInformation = 0x301,
+//  Cluster_0_Status = 0x600,
+//  Cluster_1_General = 0x701,
+//  Cluster_2_Quality = 0x702,
   Object_0_Status = 0x60A,
   Object_1_General = 0x60B,
-  Object_2_Quality = 0x60C,
-  Object_3_Extended = 0x60D,
-  Object_4_Warning = 0x60E,
+//  Object_2_Quality = 0x60C,
+//  Object_3_Extended = 0x60D,
+//  Object_4_Warning = 0x60E,
   VersionID = 0x700,
-  CollDetRelayCtrl = 0x8,
+//  CollDetRelayCtrl = 0x8,
 } can_messages;
 
 class ARS_40X_CAN {
@@ -68,9 +68,9 @@ class ARS_40X_CAN {
 
   object_list::Object_1_General *get_object_1_general();
 
-  object_list::Object_2_Quality *get_object_2_quality();
-
-  object_list::Object_3_Extended *get_object_3_extended();
+//  object_list::Object_2_Quality *get_object_2_quality();
+//
+//  object_list::Object_3_Extended *get_object_3_extended();
 
   radar_state::RadarState *get_radar_state();
 
@@ -109,9 +109,9 @@ class ARS_40X_CAN {
 
   object_list::Object_1_General object_1_general_;
 
-  object_list::Object_2_Quality object_2_quality_;
-
-  object_list::Object_3_Extended object_3_extended_;
+//  object_list::Object_2_Quality object_2_quality_;
+//
+//  object_list::Object_3_Extended object_3_extended_;
 
   radar_state::RadarState radar_state_;
 

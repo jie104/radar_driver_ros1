@@ -27,19 +27,19 @@ class ARS_40X_ROS : public ARS_40X_CAN {
 
   void run();
 
-  void send_cluster_0_status();
-
-  void send_cluster_1_general();
-
-  void send_cluster_2_quality();
+//  void send_cluster_0_status();
+//
+//  void send_cluster_1_general();
+//
+//  void send_cluster_2_quality();
 
   void send_object_0_status();
 
   void send_object_1_general();
 
-  void send_object_2_quality();
-
-  void send_object_3_extended();
+//  void send_object_2_quality();
+//
+//  void send_object_3_extended();
 
   void send_radar_state();
 
@@ -48,9 +48,9 @@ class ARS_40X_ROS : public ARS_40X_CAN {
 
   std::thread receive_data_thread_;
 
-  ClusterListROS cluster_list_ros_;
+//  ClusterListROS cluster_list_ros_;
 
-  MotionInputSignalsROS motion_input_signals_ros_;
+//  MotionInputSignalsROS motion_input_signals_ros_;
 
   ObjectListROS object_list_ros_;
 

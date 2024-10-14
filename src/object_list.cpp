@@ -71,101 +71,101 @@ object_1_general *Object_1_General::get_object_1_general() {
   return &object_1_general_msg;
 }
 
-Object_2_Quality::Object_2_Quality() {
-}
-
-Object_2_Quality::~Object_2_Quality() {
-}
-
-int Object_2_Quality::get_object_id() {
-  return static_cast<int>(object_2_quality_msg.data.Obj_ID);
-}
-
-double Object_2_Quality::get_object_lat_dist_rms() {
-  return signal_value_table[static_cast<int>(object_2_quality_msg.data.Obj_DistLat_rms1 << 2 |
-      object_2_quality_msg.data.Obj_DistLat_rms2)];
-}
-
-double Object_2_Quality::get_object_long_dist_rms() {
-  return signal_value_table[static_cast<int>(object_2_quality_msg.data.Obj_DistLong_rms)];
-}
-
-double Object_2_Quality::get_object_lat_rel_vel_rms() {
-  return signal_value_table[static_cast<int>(
-      object_2_quality_msg.data.Obj_VrelLat_rms1 << 4
-          | object_2_quality_msg.data.Obj_VrelLat_rms2)];
-}
-
-double Object_2_Quality::get_object_long_rel_vel_rms() {
-  return signal_value_table[static_cast<int>(object_2_quality_msg.data.Obj_VrelLong_rms)];
-}
-
-double Object_2_Quality::get_object_long_rel_accel_rms() {
-  return signal_value_table[static_cast<int>(object_2_quality_msg.data.Obj_ArelLong_rms1 << 1 |
-      object_2_quality_msg.data.Obj_ArelLong_rms2)];
-}
-
-double Object_2_Quality::get_object_lat_rel_accel_rms() {
-  return signal_value_table[static_cast<int>(object_2_quality_msg.data.Obj_ArelLat_rms)];
-}
-
-int Object_2_Quality::get_object_meas_state() {
-  return static_cast<int>(object_2_quality_msg.data.Obj_MeasState);
-}
-
-int Object_2_Quality::get_object_prob_of_exist() {
-  return static_cast<int>(object_2_quality_msg.data.Obj_ProbOfExist);
-}
-
-double Object_2_Quality::get_object_orientation_rms() {
-  return orientation_signal_value_table[
-      static_cast<int>(object_2_quality_msg.data.Obj_Orientation_rms1 << 3 |
-          object_2_quality_msg.data.Obj_Orientation_rms2)];
-}
-
-object_2_quality *Object_2_Quality::get_object_2_quality() {
-  return &object_2_quality_msg;
-}
-
-Object_3_Extended::Object_3_Extended() {
-}
-
-Object_3_Extended::~Object_3_Extended() {
-}
-
-int Object_3_Extended::get_object_id() {
-  return static_cast<int>(object_3_extended_msg.data.Object_ID);
-}
-
-double Object_3_Extended::get_object_long_rel_accel() {
-  return (object_3_extended_msg.data.Object_ArelLong1 << 3 |
-      object_3_extended_msg.data.Object_ArelLong2) * 0.01 - 10.0;
-}
-
-double Object_3_Extended::get_object_lat_rel_accel() {
-  return (object_3_extended_msg.data.Object_ArelLat1 << 4 |
-      object_3_extended_msg.data.Object_ArelLat2) * 0.01 - 2.50;
-}
-
-double Object_3_Extended::get_object_orientation_angle() {
-  return (object_3_extended_msg.data.Object_OrientationAngle1 << 2 |
-      object_3_extended_msg.data.Object_OrientationAngle2) * 0.4 - 180.0;
-}
-
-int Object_3_Extended::get_object_class() {
-  return static_cast<int>(object_3_extended_msg.data.Object_Class);
-}
-
-double Object_3_Extended::get_object_length() {
-  return object_3_extended_msg.data.Object_Length * 0.2;
-}
-
-double Object_3_Extended::get_object_width() {
-  return object_3_extended_msg.data.Object_Width * 0.2;
-}
-
-object_3_extended *Object_3_Extended::get_object_3_extended() {
-  return &object_3_extended_msg;
-}
+//Object_2_Quality::Object_2_Quality() {
+//}
+//
+//Object_2_Quality::~Object_2_Quality() {
+//}
+//
+//int Object_2_Quality::get_object_id() {
+//  return static_cast<int>(object_2_quality_msg.data.Obj_ID);
+//}
+//
+//double Object_2_Quality::get_object_lat_dist_rms() {
+//  return signal_value_table[static_cast<int>(object_2_quality_msg.data.Obj_DistLat_rms1 << 2 |
+//      object_2_quality_msg.data.Obj_DistLat_rms2)];
+//}
+//
+//double Object_2_Quality::get_object_long_dist_rms() {
+//  return signal_value_table[static_cast<int>(object_2_quality_msg.data.Obj_DistLong_rms)];
+//}
+//
+//double Object_2_Quality::get_object_lat_rel_vel_rms() {
+//  return signal_value_table[static_cast<int>(
+//      object_2_quality_msg.data.Obj_VrelLat_rms1 << 4
+//          | object_2_quality_msg.data.Obj_VrelLat_rms2)];
+//}
+//
+//double Object_2_Quality::get_object_long_rel_vel_rms() {
+//  return signal_value_table[static_cast<int>(object_2_quality_msg.data.Obj_VrelLong_rms)];
+//}
+//
+//double Object_2_Quality::get_object_long_rel_accel_rms() {
+//  return signal_value_table[static_cast<int>(object_2_quality_msg.data.Obj_ArelLong_rms1 << 1 |
+//      object_2_quality_msg.data.Obj_ArelLong_rms2)];
+//}
+//
+//double Object_2_Quality::get_object_lat_rel_accel_rms() {
+//  return signal_value_table[static_cast<int>(object_2_quality_msg.data.Obj_ArelLat_rms)];
+//}
+//
+//int Object_2_Quality::get_object_meas_state() {
+//  return static_cast<int>(object_2_quality_msg.data.Obj_MeasState);
+//}
+//
+//int Object_2_Quality::get_object_prob_of_exist() {
+//  return static_cast<int>(object_2_quality_msg.data.Obj_ProbOfExist);
+//}
+//
+//double Object_2_Quality::get_object_orientation_rms() {
+//  return orientation_signal_value_table[
+//      static_cast<int>(object_2_quality_msg.data.Obj_Orientation_rms1 << 3 |
+//          object_2_quality_msg.data.Obj_Orientation_rms2)];
+//}
+//
+//object_2_quality *Object_2_Quality::get_object_2_quality() {
+//  return &object_2_quality_msg;
+//}
+//
+//Object_3_Extended::Object_3_Extended() {
+//}
+//
+//Object_3_Extended::~Object_3_Extended() {
+//}
+//
+//int Object_3_Extended::get_object_id() {
+//  return static_cast<int>(object_3_extended_msg.data.Object_ID);
+//}
+//
+//double Object_3_Extended::get_object_long_rel_accel() {
+//  return (object_3_extended_msg.data.Object_ArelLong1 << 3 |
+//      object_3_extended_msg.data.Object_ArelLong2) * 0.01 - 10.0;
+//}
+//
+//double Object_3_Extended::get_object_lat_rel_accel() {
+//  return (object_3_extended_msg.data.Object_ArelLat1 << 4 |
+//      object_3_extended_msg.data.Object_ArelLat2) * 0.01 - 2.50;
+//}
+//
+//double Object_3_Extended::get_object_orientation_angle() {
+//  return (object_3_extended_msg.data.Object_OrientationAngle1 << 2 |
+//      object_3_extended_msg.data.Object_OrientationAngle2) * 0.4 - 180.0;
+//}
+//
+//int Object_3_Extended::get_object_class() {
+//  return static_cast<int>(object_3_extended_msg.data.Object_Class);
+//}
+//
+//double Object_3_Extended::get_object_length() {
+//  return object_3_extended_msg.data.Object_Length * 0.2;
+//}
+//
+//double Object_3_Extended::get_object_width() {
+//  return object_3_extended_msg.data.Object_Width * 0.2;
+//}
+//
+//object_3_extended *Object_3_Extended::get_object_3_extended() {
+//  return &object_3_extended_msg;
+//}
 }
 }

@@ -25,9 +25,9 @@ class ObjectListROS {
 
   void send_object_1_general();
 
-  void send_object_2_quality();
-
-  void send_object_3_extended();
+//  void send_object_2_quality();
+//
+//  void send_object_3_extended();
 
  private:
   std::string frame_id_;
@@ -42,13 +42,13 @@ class ObjectListROS {
 
   object_list::Object_1_General *object_1_general_;
 
-  object_list::Object_2_Quality *object_2_quality_;
+//  object_list::Object_2_Quality *object_2_quality_;
+//
+//  object_list::Object_3_Extended *object_3_extended_;
 
-  object_list::Object_3_Extended *object_3_extended_;
-
-  int object_2_quality_id_;
-
-  int object_3_extended_id_;
+//  int object_2_quality_id_;
+//
+//  int object_3_extended_id_;
 };
 }
 

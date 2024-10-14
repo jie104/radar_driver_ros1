@@ -25,9 +25,9 @@ void MotionInputSignalsROS::odom_callback(nav_msgs::Odometry msg) {
   } else {
     speed_information_->set_speed_direction(motion_input_signals::STANDSTILL);
   }
-  ars_40X_can_->send_radar_data(can_messages::SpeedInformation);
+//  ars_40X_can_->send_radar_data(can_messages::SpeedInformation);
 
   yaw_rate_information_->set_yaw_rate(msg.twist.twist.angular.z * 180.0 / M_PI);
-  ars_40X_can_->send_radar_data(can_messages::YawRateInformation);
+//  ars_40X_can_->send_radar_data(can_messages::YawRateInformation);
 }
 }
