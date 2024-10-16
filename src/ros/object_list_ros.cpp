@@ -8,6 +8,7 @@
 #include "ars_40X/Object.h"
 #include "ars_40X/ObjectList.h"
 #include <visualization_msgs/MarkerArray.h>
+#include <sensor_msgs/PointCloud.h>
 
 namespace ars_40X {
     ObjectListROS::ObjectListROS(ros::NodeHandle &nh, ARS_40X_CAN *ars_40X_can) :
@@ -19,6 +20,8 @@ namespace ars_40X {
         objects_data_pub_ = nh.advertise<ObjectList>("ars_40X/objects", 10);
 
         makerArrayPub_=nh.advertise<visualization_msgs::MarkerArray >("visualization_marker_distination",5);
+
+        radar_obstacle_pub_=nh.advertise<sensor_msgs::PointCloud>("radar_obstacles",5);
     }
 
     ObjectListROS::~ObjectListROS() {
@@ -88,6 +91,22 @@ namespace ars_40X {
 
     }
 
+    void ObjectListROS::pub_radar_obstacle() {
+        sensor_msgs::PointCloud radar_obstacle;
+        radar_obstacle.header.stamp=ros::Time::now();
+        radar_obstacle.header.frame_id=frame_id_;
+
+        for(const auto &object:object_list.objects){
+            radar_obstacle.points.emplace_back();
+            radar_obstacle.points.back().x=object.position.pose.position.x;
+            radar_obstacle.points.back().y=object.position.pose.position.y;
+            radar_obstacle.points.back().z=0;
+        }
+
+        radar_obstacle_pub_.publish(radar_obstacle);
+    }
+
+
     void ObjectListROS::send_object_0_status() {
         object_list.header.stamp = ros::Time::now();
         object_list.header.frame_id = frame_id_;
@@ -95,9 +114,13 @@ namespace ars_40X {
 //      object_list.objects.begin() ,
 //      object_list.objects.begin() + object_list.objects.size());
 
-        pub_object_position();///调试
+//        pub_object_position();///调试
 
-        objects_data_pub_.publish(object_list);
+        pub_radar_obstacle();
+
+//        objects_data_pub_.publish(object_list);
+
+
         object_list.objects.clear();
 //  object_2_quality_id_ = 0;
 //  object_3_extended_id_ = 0;

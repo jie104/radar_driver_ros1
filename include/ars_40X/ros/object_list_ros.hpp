@@ -27,6 +27,8 @@ namespace ars_40X {
 
         void pub_object_position();
 
+        void pub_radar_obstacle();
+
 //  void send_object_2_quality();
 //
 //  void send_object_3_extended();
@@ -36,6 +38,7 @@ namespace ars_40X {
 
         ros::Publisher objects_data_pub_;
         ros::Publisher makerArrayPub_;
+        ros::Publisher radar_obstacle_pub_;
 
         ARS_40X_CAN *ars_40X_can_;
 
